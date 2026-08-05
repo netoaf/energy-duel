@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duelo de Energia - LAN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="duel-stage" aria-hidden="true">
+    <div class="duel-bg"></div>
+  </div>
+
+  <main class="container duel-ui">
+    <h1>DUELO DE ENERGIA</h1>
+    <!-- Ecrã inicial -->
+    <section id="name-panel" class="panel name-panel">
+      <p class="name-label">Introduz o teu nome</p>
+      <input id="name-input" class="name-input" type="text" maxlength="16" autocomplete="name" placeholder="Jogador" />
+      <button type="button" id="name-submit" class="primary-btn name-submit">Entrar no duelo</button>
+    </section>
+    <p id="status" class="status">Jogadores online: 0</p>
+
+    <!-- HUD do jogo -->
+    <section id="hud" class="hud" hidden>
+      <p id="round" class="hud-round">RONDA 1</p>
+      <p id="my-stats" class="stat-line"></p>
+      <p id="opp-stats" class="stat-line opp"></p>
+    </section>
+
+    <!-- Loadout -->
+    <section id="loadout-panel" class="panel" hidden>
+      <h2>EQUIPAMENTO</h2>
+      <div id="special-picks" class="action-grid"></div>
+    </section>
+
+    <!-- Espera -->
+    <section id="wait-panel" class="wait-panel" hidden>
+      <div class="wait-top-left">
+        <p id="wait-player-name" class="wait-player-name">Jogador</p>
+        <p id="wait-player-stats" class="wait-player-stats">VIDA 5/5 ? ENERGIA 0/5</p>
+      </div>
+      <div class="wait-center">
+        <p class="wait-loading-text">A aguardar outro jogador...</p>
+        <img class="wait-loading-gif" src="assets/ui/gif-loading.gif" alt="A carregar" />
+      </div>
+      <button type="button" id="wait-cancel-btn" class="wait-cancel-btn">Cancelar e voltar ao menu</button>
+    </section>
+
+    <!-- Painel de ações -->
+    <section id="actions-panel" class="panel" hidden>
+      <h2>A TUA AÇÃO</h2>
+      <p class="panel-hint">AÇÕES BASE</p>
+      <div id="base-actions" class="action-grid"></div>
+      <p class="panel-hint">PODERES</p>
+      <div id="special-actions" class="action-grid"></div>
+    </section>
+
+    <p id="message" class="message"></p>
+    <!-- Resultado -->
+    <div id="result" class="result" hidden></div>
+
+    <section id="rematch-panel" class="panel rematch-panel" hidden>
+      <p id="rematch-versus" class="rematch-versus"></p>
+      <p id="rematch-status-text" class="rematch-status-text"></p>
+      <button type="button" id="rematch-btn" class="primary-btn">
+        <span class="rematch-btn-label">Jogar novamente</span>
+        <img id="rematch-wait-gif" class="rematch-wait-gif" src="assets/ui/gif-loading.gif" alt="A aguardar resposta do rival" hidden />
+      </button>
+    </section>
+  </main>
+  <!-- Scripts -->
+  <script src="client.js"></script>
+</body>
+</html>

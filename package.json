@@ -1,0 +1,17 @@
+{
+  "name": "energy-duel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-network 1v1 browser game with server-authoritative combat rules.",
+  "main": "host.js",
+  "scripts": {
+    "start": "node host.js",
+    "host": "node host.js",
+    "test": "node test.js",
+    "check": "node --check game.js && node --check host.js && node --check public/client.js && node --check test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ws": "^8.18.0"
+  }
+}
